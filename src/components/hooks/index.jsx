@@ -7,6 +7,7 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [apidata, setApidata] = useState(fitpeoData);
+  
 
   return (
     <DataContext.Provider value={{ apidata, setApidata }}>
