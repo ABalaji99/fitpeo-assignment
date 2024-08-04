@@ -15,7 +15,7 @@ export const fitpeoData = [
     ayicon: ShoppingCartOutlinedIcon,
     aytitle: 'Total Orders',
     ayscore: 75,
-    aystatus: true,
+    aystatus: false,
     aychange: 3,
     profittitle:'Net Profit',
     profittotal:6759.35,
