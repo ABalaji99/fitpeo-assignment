@@ -11,15 +11,17 @@ const Home = () => {
   const { apidata } = useContext(DataContext);
   return (
     <main className="text-level-1-text p-5">
-      <h1>Dashboard</h1>
+      <h1 className=" mb-5 text-level-1-text font-sans text-2xl">Dashboard</h1>
       <section
       >
         <div className="flex w-full gap-5 mb-5">
-          <article className="flex w-2/3 rounded-lg">
+          <article className="flex gap-5 w-3/5 rounded-lg">
             {apidata &&
               apidata.map((oa, index) => (
                 <OrderAnalytics
                   key={index} 
+                  oatheme={oa.aytheme}
+                  oaicontheme={oa.ayicontheme}
                   Oaicon={oa.ayicon}
                   oatitle={oa.aytitle}
                   oascore={oa.ayscore}
@@ -28,16 +30,16 @@ const Home = () => {
                 />
               ))}
           </article>
-          <article className="w-1/3 bg-primaryclr">
+          <article className="w-2/5 bg-primaryclr">
             <Profits />
           </article>
         </div>
 
         <div className="flex gap-5 mb-5">
-          <article className=" w-2/3 bg-primaryclr rounded-lg">
+          <article className=" w-3/5 bg-primaryclr rounded-full">
             <Chart />
           </article>
-          <article className="w-1/3 bg-primaryclr rounded-lg">
+          <article className="w-2/5 bg-primaryclr rounded-lg">
             {apidata.slice(0, 3).map((cat, index) => (
               <OrderCategory  key={index}
                 CatIcon={cat.categoryIcon}
@@ -48,10 +50,10 @@ const Home = () => {
         </div>
 
         <div className="w-full gap-5 flex">
-          <article className="w-2/3">
+          <article className="w-3/5">
             <RecentOrders />
           </article>
-          <article className="w-1/3 bg-primaryclr">
+          <article className="w-2/5 bg-primaryclr">
           <h1>Customer's Feedback</h1>
             {apidata.map((rev, index) => (
               <Testimonials 

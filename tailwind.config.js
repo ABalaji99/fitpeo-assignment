@@ -12,8 +12,10 @@ module.exports = {
       'level-3-text':'#6c6d73',
       'active':'#7396ff',
       'inactive':'#96979e',
-      
-    }
+      'icon-bgclr':'#44454a',
+    },
+ 
+  
   },
   plugins: [],
 }
