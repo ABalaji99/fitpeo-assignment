@@ -13,6 +13,7 @@ module.exports = {
       'active':'#7396ff',
       'inactive':'#96979e',
       'icon-bgclr':'#44454a',
+      "customBlue": '#7593ff',
     },
  
   

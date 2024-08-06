@@ -9,3 +9,9 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+
+span.MuiCircularProgress-root {
+  width: 86px !important;
+  height: 76px !important;
+}

@@ -7,7 +7,7 @@ const HeadNav = () => {
   const { apidata } = useContext(DataContext);
   return (
     <header className=" p-6 bg-primaryclr text-level-2-text flex justify-between align-middle">
-      <input type="search" className=" bg-input border border-white-50 w-80 p-2 outline-none rounded-lg border-opacity-10" name="search" placeholder="search" id="search" />
+      <input type="search" className=" bg-input border border-level-2-text  w-80 p-2 outline-none rounded-lg border-opacity-10" name="search" placeholder="search" id="search" />
       <div className=" flex align-middle justify-between">
         <button className=" mx-2 bg-icon-bgclr p-2 rounded-full">
           <EmailOutlinedIcon />

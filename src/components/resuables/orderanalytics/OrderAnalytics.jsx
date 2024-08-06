@@ -9,7 +9,7 @@ const OrderAnalytics = ({ oatitle, oatheme, oaicontheme, Oaicon, oascore, oastat
   };
 
   return (
-    <div className='orderanalytics p-3 rounded-lg bg-primaryclr w-1/4'>
+    <div className='orderanalytics p-3 rounded-lg bg-primaryclr w-1/4 '>
       <div type='button' className=' p-2 rounded-lg w-max' style={iconStyles}>
         <Oaicon />
       </div>

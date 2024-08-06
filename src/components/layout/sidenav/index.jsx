@@ -10,47 +10,83 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 
 const Sidenav = () => {
     return (
-        <nav className="h-screen w-16 bg-primaryclr hover:w-32 text-level-2-text text-center group">
-            <Logo />
-            <ul>
-                <li className="my-4">
-                    <NavLink to="/" className="flex items-center justify-center group-hover:justify-start">
-                        <OtherHouses className="mr-2" />
-                        <span className="hidden group-hover:inline-block">Home</span>
-                    </NavLink>
-                </li>
-                <li className="my-4">
-                    <NavLink to="/dashboard" className="flex items-center justify-center group-hover:justify-start">
-                        <AssessmentOutlinedIcon className="mr-2" />
-                        <span className="hidden group-hover:inline-block">Dashboard</span>
-                    </NavLink>
-                </li>
-                <li className="my-4">
-                    <NavLink to="/analytics" className="flex items-center justify-center group-hover:justify-start">
-                        <AssignmentTurnedInOutlinedIcon className="mr-2" />
-                        <span className="hidden group-hover:inline-block">Analytics</span>
-                    </NavLink>
-                </li>
-                <li className="my-4">
-                    <NavLink to="/account" className="flex items-center justify-center group-hover:justify-start">
-                        <AccountBalanceWalletOutlinedIcon className="mr-2" />
-                        <span className="hidden group-hover:inline-block">Account</span>
-                    </NavLink>
-                </li>
-                <li className="my-4">
-                    <NavLink to="/orders" className="flex items-center justify-center group-hover:justify-start">
-                        <LocalMallOutlinedIcon className="mr-2" />
-                        <span className="hidden group-hover:inline-block">Orders</span>
-                    </NavLink>
-                </li>
-            </ul>
-            <button className="flex items-center justify-center group-hover:justify-start">
+        <nav className="h-screen w-16 bg-primaryclr hover:w-32 text-level-2-text text-center flex flex-col justify-between group transition-all duration-300">
+            <div>
+                <Logo />
+                <ul className="mt-4">
+                    <li className="my-4">
+                        <NavLink
+                            exact
+                            to="/"
+                            className={({ isActive }) => 
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                    isActive ? "border-l-2 border-customBlue text-customBlue" : ""
+                                }`
+                            }
+                        >
+                            <OtherHouses className="mr-2" />
+                            <span className="hidden group-hover:inline-block">Home</span>
+                        </NavLink>
+                    </li>
+                    <li className="my-4">
+                        <NavLink
+                            to="/dashboard"
+                            className={({ isActive }) => 
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                    isActive ? "border-l-2 border-customBlue text-customBlue" : ""
+                                }`
+                            }
+                        >
+                            <AssessmentOutlinedIcon className="mr-2" />
+                            <span className="hidden group-hover:inline-block">Dashboard</span>
+                        </NavLink>
+                    </li>
+                    <li className="my-4">
+                        <NavLink
+                            to="/analytics"
+                            className={({ isActive }) => 
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                    isActive ? "border-l-2 border-customBlue text-customBlue" : ""
+                                }`
+                            }
+                        >
+                            <AssignmentTurnedInOutlinedIcon className="mr-2" />
+                            <span className="hidden group-hover:inline-block">Analytics</span>
+                        </NavLink>
+                    </li>
+                    <li className="my-4">
+                        <NavLink
+                            to="/account"
+                            className={({ isActive }) => 
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                    isActive ? "border-l-2 border-customBlue text-customBlue" : ""
+                                }`
+                            }
+                        >
+                            <AccountBalanceWalletOutlinedIcon className="mr-2" />
+                            <span className="hidden group-hover:inline-block">Account</span>
+                        </NavLink>
+                    </li>
+                    <li className="my-4">
+                        <NavLink
+                            to="/orders"
+                            className={({ isActive }) => 
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                    isActive ? "border-l-2 border-customBlue text-customBlue" : ""
+                                }`
+                            }
+                        >
+                            <LocalMallOutlinedIcon className="mr-2" />
+                            <span className="hidden group-hover:inline-block">Orders</span>
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+            <button className="flex items-center justify-center group-hover:justify-start transition-all duration-300 mb-4">
                 <ExitToAppOutlinedIcon className="mr-2" />
                 <span className="hidden group-hover:inline-block">Logout</span>
             </button>
         </nav>
-        
-
     );
 };
 

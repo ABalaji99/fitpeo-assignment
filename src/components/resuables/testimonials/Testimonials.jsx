@@ -1,15 +1,17 @@
-import { Rating } from '@mui/material'
-import React from 'react'
+import { Rating } from "@mui/material";
+import React from "react";
 
-
-const Testimonials = ({user , testi , rate}) => {
+const Testimonials = ({ usericon, user, testi, rate }) => {
   return (
-    <div>
-       <Rating name="half-rating-read" defaultValue={rate} precision={0.1} readOnly />
-        <h1>{user}</h1>
-        <p>{testi}</p>
+    <div className="py-2 border-b-level-3-text border-b">
+      <div className="flex gap-2 items-center justify-start">
+        <img className="w-10 h-10 rounded-full" src={usericon} alt={user} />
+        <h1 className="text-lg text-level-1-text">{user}</h1>
+      </div>
+      <Rating name="half-rating-read" defaultValue={rate} readOnly />
+      <p className=" text-xs text-level-2-text">{testi}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

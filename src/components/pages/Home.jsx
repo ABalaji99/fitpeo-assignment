@@ -14,7 +14,7 @@ const Home = () => {
       <h1 className=" mb-5 text-level-1-text font-sans text-2xl">Dashboard</h1>
       <section
       >
-        <div className="flex w-full gap-5 mb-5">
+        <div className="flex w-full gap-10 mb-10">
           <article className="flex gap-5 w-3/5 rounded-lg">
             {apidata &&
               apidata.map((oa, index) => (
@@ -30,12 +30,12 @@ const Home = () => {
                 />
               ))}
           </article>
-          <article className="w-2/5 bg-primaryclr">
+          <article className="w-2/5 rounded-lg bg-primaryclr">
             <Profits />
           </article>
         </div>
 
-        <div className="flex gap-5 mb-5">
+        <div className="flex gap-10 mb-10">
           <article className=" w-3/5 bg-primaryclr rounded-full">
             <Chart />
           </article>
@@ -44,23 +44,26 @@ const Home = () => {
               <OrderCategory  key={index}
                 CatIcon={cat.categoryIcon}
                 catTitle={cat.categoryTitle}
+                catbg={cat.ctbgclr}
+                caticonclr={cat.cticonclr}
               />
             ))}
           </article>
         </div>
 
-        <div className="w-full gap-5 flex">
+        <div className="w-full gap-10 flex">
           <article className="w-3/5">
             <RecentOrders />
           </article>
-          <article className="w-2/5 bg-primaryclr">
-          <h1>Customer's Feedback</h1>
+          <article className="w-2/5 h-72 rounded-xl bg-primaryclr p-4 overflow-y-auto ">
+          <h1 className="mb-2 text-xl text-level-1-text">Customer's Feedback</h1>
             {apidata.map((rev, index) => (
               <Testimonials 
                 key={index}
                 testi={rev.userreview}
                 rate={rev.userRating}
                 user={rev.ratinguser}
+                usericon={rev.user}
               />
             ))}
           </article>

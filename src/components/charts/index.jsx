@@ -3,29 +3,18 @@ import { axisClasses } from '@mui/x-charts/ChartsAxis';
 import { BarChart } from '@mui/x-charts/BarChart';
 
 const otherSetting = {
-  height: 200,
-  yAxis: [{ label: 'rainfall (mm)' }],
+  height: 180,
+  yAxis: [{ label: '', max: 15000 }],
   grid: { horizontal: true },
   sx: {
     backgroundColor: '#1f2029', // Background color similar to the image
-    [`& .${axisClasses.left} .${axisClasses.label}`]: {
-      transform: 'translateX(-10px)',
-      fill: 'white', // Text color
+    [`& .${axisClasses.left} .${axisClasses.label}, & .${axisClasses.bottom} .${axisClasses.label}`]: {
+      fill: 'white', // Axis label text color
     },
-    [`& .${axisClasses.bottom} .${axisClasses.label}`]: {
-      fill: 'white', // Text color
-    },
-    [`& .${axisClasses.left} .${axisClasses.axisLine}`]: {
+    [`& .${axisClasses.left} .${axisClasses.axisLine}, & .${axisClasses.bottom} .${axisClasses.axisLine}`]: {
       stroke: 'white', // Axis line color
     },
-    [`& .${axisClasses.bottom} .${axisClasses.axisLine}`]: {
-      stroke: 'white', // Axis line color
-    },
-    [`& .${axisClasses.left} .${axisClasses.tick}`]: {
-      stroke: 'white', // Tick color
-      fill: 'white', // Tick text color
-    },
-    [`& .${axisClasses.bottom} .${axisClasses.tick}`]: {
+    [`& .${axisClasses.left} .${axisClasses.tick}, & .${axisClasses.bottom} .${axisClasses.tick}`]: {
       stroke: 'white', // Tick color
       fill: 'white', // Tick text color
     },
@@ -36,120 +25,55 @@ const otherSetting = {
 };
 
 const dataset = [
-  {
-    london: 59,
-    paris: 57,
-    newYork: 86,
-    seoul: 21,
-    month: 'January',
-  },
-  {
-    london: 50,
-    paris: 52,
-    newYork: 78,
-    seoul: 28,
-    month: 'February',
-  },
-  {
-    london: 47,
-    paris: 53,
-    newYork: 106,
-    seoul: 41,
-    month: 'March',
-  },
-  {
-    london: 54,
-    paris: 56,
-    newYork: 92,
-    seoul: 73,
-    month: 'April',
-  },
-  {
-    london: 57,
-    paris: 69,
-    newYork: 92,
-    seoul: 99,
-    month: 'May',
-  },
-  {
-    london: 60,
-    paris: 63,
-    newYork: 103,
-    seoul: 144,
-    month: 'June',
-  },
-  {
-    london: 59,
-    paris: 60,
-    newYork: 105,
-    seoul: 319,
-    month: 'July',
-  },
-  {
-    london: 65,
-    paris: 60,
-    newYork: 106,
-    seoul: 249,
-    month: 'August',
-  },
-  {
-    london: 51,
-    paris: 51,
-    newYork: 95,
-    seoul: 131,
-    month: 'September',
-  },
-  {
-    london: 60,
-    paris: 65,
-    newYork: 97,
-    seoul: 55,
-    month: 'October',
-  },
-  {
-    london: 67,
-    paris: 64,
-    newYork: 76,
-    seoul: 48,
-    month: 'November',
-  },
-  {
-    london: 61,
-    paris: 70,
-    newYork: 103,
-    seoul: 25,
-    month: 'December',
-  },
+  { day: 5, activity: 5000 },
+  { day: 6, activity: 3000 },
+  { day: 7, activity: 10000 },
+  { day: 8, activity: 7000 },
+  { day: 9, activity: 8000 },
+  { day: 10, activity: 9000 },
+  { day: 11, activity: 11000 },
+  { day: 12, activity: 12000 },
+  { day: 13, activity: 3000 },
+  { day: 14, activity: 4000 },
+  { day: 15, activity: 6000 },
+  { day: 16, activity: 7000 },
+  { day: 17, activity: 10000 },
+  { day: 18, activity: 14000 },
+  { day: 19, activity: 15000 },
+  { day: 20, activity: 9000 },
+  { day: 21, activity: 13000 },
+  { day: 22, activity: 11000 },
+  { day: 23, activity: 7000 },
+  { day: 24, activity: 6000 },
+  { day: 25, activity: 10000 },
+  { day: 26, activity: 4000 },
+  { day: 27, activity: 8000 },
 ];
 
-const valueFormatter = (value) => `${value}mm`;
-
-export default function Chart() {
+export default function ActivityChart() {
   return (
-   <>
-   <div className='flex justify-between align-middle'>
-   <h1>Activity</h1>
-   <select name="" id="">
-    <option value="">Weekly</option>
-   </select>
-   </div>
-   <BarChart
-      className=' bg-primaryclr'
-      borderRadius={50}
-      dataset={dataset}
-      xAxis={[
-        {
-          scaleType: 'band',
-          dataKey: 'month',
-          valueFormatter: (month, context) =>
-            context.location === 'tick'
-              ? `${month.slice(0, 3)} \n2023`
-              : `${month} 2023`,
-        },
-      ]}
-      series={[{ dataKey: 'seoul', valueFormatter }]}
-      {...otherSetting}
-    />
-   </>
+    <>
+      <div className='flex justify-between items-center px-4 py-2 bg-primaryclr'>
+        <h1 className='text-white text-xl'>Activity</h1>
+        <select className='bg-primaryclr text-white border border-gray-500 rounded px-2 py-1 appearance-none relative'>
+          <option value="weekly">Weekly</option>
+          {/* Add more options if needed */}
+        </select>
+      </div>
+      <BarChart
+        className='bg-primaryclr p-4 rounded-lg'
+        borderRadius={10}
+        dataset={dataset}
+        xAxis={[
+          {
+            scaleType: 'band',
+            dataKey: 'day',
+            valueFormatter: (day) => `${day}`,
+          },
+        ]}
+        series={[{ dataKey: 'activity', valueFormatter: (value) => `${value}` }]}
+        {...otherSetting}
+      />
+    </>
   );
 }
