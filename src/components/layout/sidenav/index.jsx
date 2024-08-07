@@ -10,7 +10,7 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 
 const Sidenav = () => {
     return (
-        <nav className="h-screen w-16 bg-primaryclr hover:w-32 text-level-2-text text-center flex flex-col justify-between group transition-all duration-300">
+        <nav className=" py-3 h-screen w-16 bg-primaryclr hover:w-32 text-level-2-text text-center flex flex-col justify-between group transition-all duration-300">
             <div>
                 <Logo />
                 <ul className="mt-4">
@@ -19,7 +19,7 @@ const Sidenav = () => {
                             exact
                             to="/"
                             className={({ isActive }) => 
-                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 mt-12 mb-6  ${
                                     isActive ? "border-l-2 border-customBlue text-customBlue" : ""
                                 }`
                             }
@@ -32,7 +32,7 @@ const Sidenav = () => {
                         <NavLink
                             to="/dashboard"
                             className={({ isActive }) => 
-                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 mt-6 mb-6 ${
                                     isActive ? "border-l-2 border-customBlue text-customBlue" : ""
                                 }`
                             }
@@ -45,7 +45,7 @@ const Sidenav = () => {
                         <NavLink
                             to="/analytics"
                             className={({ isActive }) => 
-                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 mt-6 mb-6 ${
                                     isActive ? "border-l-2 border-customBlue text-customBlue" : ""
                                 }`
                             }
@@ -58,7 +58,7 @@ const Sidenav = () => {
                         <NavLink
                             to="/account"
                             className={({ isActive }) => 
-                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 mt-6 mb-6 ${
                                     isActive ? "border-l-2 border-customBlue text-customBlue" : ""
                                 }`
                             }
@@ -71,7 +71,7 @@ const Sidenav = () => {
                         <NavLink
                             to="/orders"
                             className={({ isActive }) => 
-                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 ${
+                                `flex items-center justify-center group-hover:justify-start transition-all duration-300 mt-6 mb-6 ${
                                     isActive ? "border-l-2 border-customBlue text-customBlue" : ""
                                 }`
                             }

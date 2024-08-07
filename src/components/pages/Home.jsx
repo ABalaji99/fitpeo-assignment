@@ -14,7 +14,7 @@ const Home = () => {
       <h1 className=" mb-5 text-level-1-text font-sans text-2xl">Dashboard</h1>
       <section
       >
-        <div className="flex w-full gap-10 mb-10">
+        <div className="flex w-full gap-6 mb-6">
           <article className="flex gap-5 w-3/5 rounded-lg">
             {apidata &&
               apidata.map((oa, index) => (
@@ -35,8 +35,8 @@ const Home = () => {
           </article>
         </div>
 
-        <div className="flex gap-10 mb-10">
-          <article className=" w-3/5 bg-primaryclr rounded-full">
+        <div className="flex gap-6 mb-6">
+          <article className=" w-3/5 bg-primaryclr rounded-lg">
             <Chart />
           </article>
           <article className="w-2/5 bg-primaryclr rounded-lg">

@@ -53,11 +53,10 @@ const dataset = [
 export default function ActivityChart() {
   return (
     <>
-      <div className='flex justify-between items-center px-4 py-2 bg-primaryclr'>
+      <div className='flex justify-between items-center px-4 py-2 bg-primaryclr rounded-lg'>
         <h1 className='text-white text-xl'>Activity</h1>
         <select className='bg-primaryclr text-white border border-gray-500 rounded px-2 py-1 appearance-none relative'>
           <option value="weekly">Weekly</option>
-          {/* Add more options if needed */}
         </select>
       </div>
       <BarChart
