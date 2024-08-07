@@ -15,3 +15,21 @@ span.MuiCircularProgress-root {
   width: 86px !important;
   height: 76px !important;
 }
+
+/* In your CSS or TailwindCSS file */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4A5568; /* Adjust to match your theme */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #E2E8F0; /* Adjust to match your theme */
+}
+
+.css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-tickLabel{
+  fill: #E2E8F0 !important;
+}

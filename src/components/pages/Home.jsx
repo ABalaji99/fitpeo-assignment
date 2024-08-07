@@ -51,22 +51,22 @@ const Home = () => {
           </article>
         </div>
 
-        <div className="w-full gap-10 flex">
-          <article className="w-3/5">
-            <RecentOrders />
-          </article>
-          <article className="w-2/5 h-72 rounded-xl bg-primaryclr p-4 overflow-y-auto ">
-          <h1 className="mb-2 text-xl text-level-1-text">Customer's Feedback</h1>
-            {apidata.map((rev, index) => (
-              <Testimonials 
-                key={index}
-                testi={rev.userreview}
-                rate={rev.userRating}
-                user={rev.ratinguser}
-                usericon={rev.user}
-              />
-            ))}
-          </article>
+        <div className="w-full gap-6 flex">
+            <article className="w-3/5">
+                <RecentOrders />
+            </article>
+            <article className="w-2/5 h-72 rounded-xl bg-primaryclr p-4 overflow-y-auto custom-scrollbar">
+                <h1 className="mb-2 text-xl text-level-1-text">Customer's Feedback</h1>
+                {apidata.map((rev, index) => (
+                    <Testimonials 
+                        key={index}
+                        testi={rev.userreview}
+                        rate={rev.userRating}
+                        user={rev.ratinguser}
+                        usericon={rev.user}
+                    />
+                ))}
+            </article>
         </div>
       </section>
     </main>

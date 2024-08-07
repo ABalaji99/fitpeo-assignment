@@ -15,6 +15,7 @@ module.exports = {
       'icon-bgclr':'#44454a',
       "customBlue": '#7593ff',
     },
+    scrollbar: ['rounded'],
  
   
   },

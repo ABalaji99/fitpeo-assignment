@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const OrderCategory = ({ CatIcon, catTitle, catbg, caticonclr }) => {
@@ -16,9 +15,9 @@ const OrderCategory = ({ CatIcon, catTitle, catbg, caticonclr }) => {
         </div>
         {catTitle}
       </h1>
-      <Link to="/" className="p-3 rounded-full bg-level-3-text">
-        <NavigateNextIcon />
-      </Link>
+      <div className="h-10 w-10 text-center  rounded-full bg-level-3-text">
+        <NavigateNextIcon style={{padding:"8px 0 0 0"}}/>
+      </div>
     </div>
   );
 };
